@@ -1,0 +1,36 @@
+""" 
+distance rate calculator
+
+ask distance from user
+base price upto 5km -100rs
+5-10 km-> 50 rs/km
+10-15km-> 40 rs/km
+15-20km -> 30 rs/km
+20 above -> 15rs/km
+
+3km-> 100 rs
+
+7km -> 5+2 -> 100 +100 -> 200
+
+
+ """
+
+
+distance = int(input("enter the distance: "))
+total = 0
+if distance <= 5 and distance > 0:
+    total = 100
+
+elif distance >= 6 and distance <= 10:
+    total = 100 + ((distance - 5) * 50)
+
+elif distance >= 11 and distance <= 15:
+    total = 100 + 5 * 50 + ((distance - 10) * 40)
+
+elif distance >= 16 and distance <= 20:
+    total = 100 + (5 * 50) + (5 * 40) + ((distance - 15) * 30)
+
+else:
+    total = 100 + (5 * 50) + (5 * 40) + (5 * 30) + ((distance - 20) * 15)
+
+print(f"Total  = {total}")
